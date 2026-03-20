@@ -1,0 +1,121 @@
+.boardsec {
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.liveBilnksec {
+  padding: 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.websitedescriptionsec {
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+}
+
+.header {
+  color: #10285c;
+  margin: 0;
+  width: 35%;
+  text-align: center;
+}
+
+.paragraph {
+  font-size: 17px;
+  width: 60%;
+  margin: 0px;
+}
+
+.jobSwitchsec {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  position: relative;
+  display: flex;
+  width: 260px;
+  background: #f1f3f5;
+  border-radius: 30px;
+  padding: 4px;
+  overflow: hidden;
+  border: 0.5px dotted #10285c;
+}
+
+.btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 2;
+  color: #10285c;
+}
+
+.active {
+  color: white;
+}
+
+.slider {
+  position: absolute;
+  width: 50%;
+  height: calc(100% - 8px);
+  background: #10285c;
+  border-radius: 30px;
+  top: 4px;
+  left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.moveRight {
+  transform: translateX(94%);
+}
+
+.importantjoblistsec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.importantcontainer {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.cardcontainer {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: #1cac4f;
+  color: white;
+  border-radius: 2px;
+}
+
+.cardheader {
+  margin: 0;
+  font-size: 16px;
+}

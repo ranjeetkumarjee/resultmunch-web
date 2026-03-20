@@ -1,0 +1,110 @@
+.uniquejobcontainer {
+  padding: 1px 20px;
+  border-left: 1px solid gainsboro;
+}
+.jobheader {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.jobtitle {
+  color: rgb(0, 106, 255);
+  margin: 0px;
+  font-size: 25px;
+}
+
+.postdatesec {
+  color: red;
+  margin: 5px 0px;
+  font-size: 22px;
+}
+.jobcontent {
+  font-size: 20px;
+}
+.jobtitleindes {
+  color: #1111af;
+}
+
+.bold {
+  font-weight: 700;
+}
+.redbold {
+  font-weight: 700;
+  color: red;
+}
+
+.jobDesTableSec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.jobDesTable {
+  width: 80%;
+  border-radius: 5px;
+  border-spacing: 0px;
+}
+.jobDesTableHeader {
+  font-size: 25px;
+  /* background: rgba(216, 38, 18, 0.82); */
+  color: #e74040;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+}
+.jobDesPostwise {
+  background: #10285c;
+  color: white;
+}
+.jobDesImportantDates {
+  text-align: center;
+  font-size: 25px;
+  background-color: red;
+  color: white;
+  padding: 6px;
+}
+.jobDesApplicationFee {
+  text-align: center;
+  font-size: 25px;
+  background-color: red;
+  color: white;
+  padding: 6px;
+}
+
+.jobDesImportantDatesList {
+  font-size: 20px;
+}
+.jobDesApplicationFeeList {
+  font-size: 20px;
+}
+.jobDesAgeLimitsHeading {
+  padding: 5px 5px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+.jobcoutingHeading {
+  padding: 5px 5px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+.agelimitlisting {
+  font-size: 20px;
+}
+.noofjobs {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.importantLinksHeading {
+  background-color: rgb(2, 17, 51);
+  color: white;
+}

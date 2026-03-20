@@ -1,0 +1,23 @@
+.homesection {
+  justify-content: space-between;
+  border: 1px solid gainsboro;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+}
+
+.resultlistsec {
+  width: 30%;
+}
+
+.jobrow {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.secondrow {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
