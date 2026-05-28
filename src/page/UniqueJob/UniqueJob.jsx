@@ -7,35 +7,44 @@ const UniqueJob = () => {
 
   return (
     <div className={uniquejobcss.uniquejobcontainer}>
-      <div className={uniquejobcss.jobheader}>
-        <h1 className={uniquejobcss.jobtitle}>RRB Group-D Recruitment 2026</h1>
+      <div className={uniquejobcss.jobDesSec}>
+        <div className={uniquejobcss.jobheader}>
+          <h1 className={uniquejobcss.jobtitle}>
+            RRB Group-D Recruitment 2026
+          </h1>
+        </div>
+        <div className={uniquejobcss.postdatesec}>
+          Post Date: March 3, 2026 9:44 am
+        </div>
+        <div className={uniquejobcss.jobcontent}>
+          <span className={uniquejobcss.jobtitleindes}>
+            Bihar Public Service Commission (BPSC)
+          </span>{" "}
+          , The notification for the recruitment of{" "}
+          <span className={uniquejobcss.bold}>
+            {" "}
+            Assistant Prosecution Officer (APO){" "}
+          </span>
+          Recruitment has released on the official website. This recruitment is
+          for <span className={uniquejobcss.bold}>300 positions</span> . The
+          BPSC application form has{" "}
+          <span className={uniquejobcss.bold}>
+            {" "}
+            started on 27 February 2026
+          </span>
+          , and candidates can apply{" "}
+          <span className={uniquejobcss.bold}> until 20 March 2026</span>. The
+          <span className={uniquejobcss.bold}>minimum age is 21 Years</span> &
+          the{" "}
+          <span className={uniquejobcss.bold}>
+            maximum age is 42 years as of 01 August 2026
+          </span>
+          . Candidates must check the complete details for the Bihar BPSC APO
+          Recruitment 2026. provided below.{" "}
+          <span className={uniquejobcss.bold}>(Advt. No. 13/2026)</span>
+        </div>
       </div>
-      <div className={uniquejobcss.postdatesec}>
-        Post Date: March 3, 2026 9:44 am
-      </div>
-      <div className={uniquejobcss.jobcontent}>
-        <span className={uniquejobcss.jobtitleindes}>
-          Bihar Public Service Commission (BPSC)
-        </span>{" "}
-        , The notification for the recruitment of{" "}
-        <span className={uniquejobcss.bold}>
-          {" "}
-          Assistant Prosecution Officer (APO){" "}
-        </span>
-        Recruitment has released on the official website. This recruitment is
-        for <span className={uniquejobcss.bold}>300 positions</span> . The BPSC
-        application form has{" "}
-        <span className={uniquejobcss.bold}> started on 27 February 2026</span>,
-        and candidates can apply{" "}
-        <span className={uniquejobcss.bold}> until 20 March 2026</span>. The
-        <span className={uniquejobcss.bold}>minimum age is 21 Years</span> & the{" "}
-        <span className={uniquejobcss.bold}>
-          maximum age is 42 years as of 01 August 2026
-        </span>
-        . Candidates must check the complete details for the Bihar BPSC APO
-        Recruitment 2026. provided below.{" "}
-        <span className={uniquejobcss.bold}>(Advt. No. 13/2026)</span>
-      </div>
+
       <div className={uniquejobcss.jobDesTableSec}>
         <table border={1} className={uniquejobcss.jobDesTable}>
           <tbody>

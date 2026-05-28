@@ -1,6 +1,13 @@
 .uniquejobcontainer {
   padding: 1px 20px;
   border-left: 1px solid gainsboro;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.jobDesSec {
+  width: 80%;
 }
 .jobheader {
   width: 100%;
@@ -43,7 +50,7 @@
 }
 
 .jobDesTable {
-  width: 80%;
+  width: 97%;
   border-radius: 5px;
   border-spacing: 0px;
 }

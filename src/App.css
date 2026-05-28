@@ -3,3 +3,7 @@
   font-family: "Gill Sans", sans-serif;
   /* font-family: cursive; */
 }
+
+.App {
+  min-width: 964px;
+}
