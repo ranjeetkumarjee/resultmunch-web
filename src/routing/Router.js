@@ -4,6 +4,7 @@ import MainLayout from "../layout/MainLayout.jsx";
 
 const Home = lazy(() => import("../page/Home/Home.jsx"));
 const UniqueJob = lazy(() => import("../page/UniqueJob/UniqueJob.jsx"));
+const AddJob = lazy(() => import("../page/addJob/AddJob.jsx"));
 
 const Router = () => {
   return (
@@ -13,6 +14,7 @@ const Router = () => {
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/:jobId" element={<UniqueJob />} />
+            <Route path="/add-job" element={<AddJob />} />
           </Route>
         </Routes>
       </Suspense>
