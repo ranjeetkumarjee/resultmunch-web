@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import addjobcss from "./addjob.module.css";
-import { endpoints } from "../../config/endpoints.config";
-import HttpClient from "../../utils/apiHelper";
+import { createJob } from "../../services/jobService";
 import { toast } from "react-toastify";
 
 // ─── CONSTANTS ───────────────────────────────────────────────────────────────
@@ -1191,23 +1190,27 @@ const STEP_ICONS = [
 export default function AddJob() {
   const [step, setStep] = useState(0);
   const [data, setData] = useState(initState());
-  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const goNext = () => setStep((s) => Math.min(s + 1, STEPS.length - 1));
   const goPrev = () => setStep((s) => Math.max(s - 1, 0));
   const submit = async () => {
+    if (loading) return;
     try {
-      const payload = {};
-      const response = await HttpClient.post(endpoints.addJob(), data);
-      if (response.success) {
-        toast.success("Added Successfully!");
+      setLoading(true);
+      const response = await createJob(data);
+      if (response?.success) {
+        toast.success(response?.message || "Added Successfully!");
+        setData(initState());
+        setStep(0);
       } else {
-        toast.error(`${response?.message}`);
+        toast.error(response?.message || "Something went wrong");
       }
-      // setSubmitted(true);
     } catch (error) {
       console.log("Error:", error);
-      return toast.error(error?.response?.message);
+      toast.error(error?.message || "Failed to submit");
+    } finally {
+      setLoading(false);
     }
   };
   // const backToForm = () => setSubmitted(false);
@@ -1274,8 +1277,13 @@ export default function AddJob() {
               Next →
             </button>
           ) : (
-            <button className={addjobcss.btnSubmit} onClick={submit}>
-              Generate Job Page
+            <button
+              className={addjobcss.btnSubmit}
+              onClick={submit}
+              disabled={loading}
+              style={{ opacity: loading ? 0.6 : 1 }}
+            >
+              {loading ? "Submitting..." : "Generate Job Page"}
             </button>
           )}
         </div>

@@ -3,7 +3,7 @@ import axios from "axios";
 class HttpClient {
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: import.meta.env.VITE_API_BASE_URL || "", // env-based
+      baseURL: process.env.REACT_APP_API_BASE_URL || "", // env-based
       timeout: 10000, // 10 sec timeout
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ class HttpClient {
         }
 
         // Optional logging
-        if (import.meta.env.DEV) {
+        if (process.env.NODE_ENV === "development") {
           console.log(" Request:", config);
         }
 
@@ -45,7 +45,7 @@ class HttpClient {
   _initializeResponseInterceptor() {
     this.axiosInstance.interceptors.response.use(
       (response) => {
-        if (import.meta.env.DEV) {
+        if (process.env.NODE_ENV === "development") {
           console.log(" Response:", response);
         }
         return response.data; //  always return data directly
