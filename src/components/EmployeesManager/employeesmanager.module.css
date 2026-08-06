@@ -1,0 +1,165 @@
+.wrap {
+  width: 100%;
+}
+
+.headerRow {
+  margin-bottom: 14px;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  color: #10285c;
+}
+
+.addForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 12px;
+  border: 1px solid #d6dbe6;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #10285c;
+}
+
+.addBtn {
+  border: none;
+  background: #10285c;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.addBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.credsCard {
+  background: #f0f8ff;
+  border: 1px solid #b6d8f5;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.credsHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #10285c;
+}
+
+.closeBtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  color: #6c757d;
+}
+
+.credsWarn {
+  color: #b26a00;
+  font-size: 13px;
+  margin: 6px 0 12px;
+}
+
+.credsRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.credsRow span {
+  width: 80px;
+  color: #6c757d;
+  font-size: 13px;
+}
+
+.credsRow code {
+  background: #fff;
+  border: 1px solid #d6dbe6;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: #1f2a44;
+}
+
+.copyBtn {
+  margin-top: 6px;
+  border: none;
+  background: #10285c;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 7px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.muted {
+  color: #6c757d;
+  padding: 8px 2px;
+}
+
+.errorText {
+  color: #dc3545;
+  padding: 8px 2px;
+}
+
+.tableScroll {
+  overflow-x: auto;
+  border: 1px solid #e6e9f0;
+  border-radius: 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 420px;
+}
+
+.table thead th {
+  text-align: left;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #6c757d;
+  background: #f6f8fc;
+  padding: 12px 14px;
+  border-bottom: 1px solid #e6e9f0;
+}
+
+.table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eef1f6;
+}
+
+.deleteBtn {
+  border: none;
+  background: #dc3545;
+  color: #fff;
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.deleteBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,27 @@
+.tabBar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  border: none;
+  background: #e9edf5;
+  color: #33415c;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tabActive {
+  background: #10285c;
+  color: #fff;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(16, 40, 92, 0.06);
+  padding: 22px;
+}
