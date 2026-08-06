@@ -1,8 +1,23 @@
 import HttpClient from "../utils/apiHelper";
 import { endpoints } from "../config/endpoints.config";
 
+// ─── Protected: create / update / publish / hide / delete ────────────────────
+
 export const createJob = (payload) =>
   HttpClient.post(endpoints.createJob(), payload);
+
+export const updateJob = (id, payload) =>
+  HttpClient.put(endpoints.updateJob(id), payload);
+
+export const deleteJob = (id) => HttpClient.delete(endpoints.deleteJob(id));
+
+export const publishJob = (id) => HttpClient.patch(endpoints.publishJob(id));
+
+export const hideJob = (id) => HttpClient.patch(endpoints.hideJob(id));
+
+export const getMyJobs = (params) => HttpClient.get(endpoints.myJobs(), params);
+
+// ─── Public listings ─────────────────────────────────────────────────────────
 
 export const getAllJobs = (params) =>
   HttpClient.get(endpoints.getAllJobs(), params);

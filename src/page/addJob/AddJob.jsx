@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import addjobcss from "./addjob.module.css";
-import { createJob } from "../../services/jobService";
+import { createJob, updateJob } from "../../services/jobService";
 import { toast } from "react-toastify";
 
 // ─── CONSTANTS ───────────────────────────────────────────────────────────────
@@ -447,7 +447,7 @@ function Step1Basic({ data, set }) {
           onChange={u("jobHeading")}
         />
       </Field>
-      <Field label="Admit Card Lebel">
+      {/* <Field label="Admit Card Lebel">
         <input
           className={addjobcss.input}
           placeholder="UPPSC LT Grade Assistant Teacher (Computer) Admit Card 2026"
@@ -482,7 +482,7 @@ function Step1Basic({ data, set }) {
           <option value={false}>No</option>
           <option value={true}>Yes</option>
         </select>
-      </Field>
+      </Field> */}
     </div>
   );
 }
@@ -606,7 +606,7 @@ function Step3FeeAge({ data, set }) {
             <Field label="Fee (₹)">
               <input
                 className={addjobcss.input}
-                type="number"
+                type="text"
                 placeholder="e.g. 500"
                 value={r.fee}
                 onChange={(e) => updFee(i, "fee", e.target.value)}
@@ -1187,9 +1187,20 @@ const STEP_ICONS = [
 
 // ─── MAIN EXPORT ─────────────────────────────────────────────────────────────
 
-export default function AddJob() {
+export default function AddJob({
+  mode = "add",
+  initialData = null,
+  jobId = null,
+  onSuccess,
+  onCancel,
+}) {
+  const isEdit = mode === "edit";
   const [step, setStep] = useState(0);
-  const [data, setData] = useState(initState());
+  // Merge onto defaults so every field stays a controlled input in edit mode.
+  const [data, setData] = useState(() => ({
+    ...initState(),
+    ...(initialData || {}),
+  }));
   const [loading, setLoading] = useState(false);
 
   const goNext = () => setStep((s) => Math.min(s + 1, STEPS.length - 1));
@@ -1198,11 +1209,19 @@ export default function AddJob() {
     if (loading) return;
     try {
       setLoading(true);
-      const response = await createJob(data);
+      const response = isEdit
+        ? await updateJob(jobId, data)
+        : await createJob(data);
       if (response?.success) {
-        toast.success(response?.message || "Added Successfully!");
-        setData(initState());
-        setStep(0);
+        toast.success(
+          response?.message ||
+            (isEdit ? "Updated Successfully!" : "Added Successfully!"),
+        );
+        if (!isEdit) {
+          setData(initState());
+          setStep(0);
+        }
+        onSuccess?.(response?.data);
       } else {
         toast.error(response?.message || "Something went wrong");
       }
@@ -1213,7 +1232,6 @@ export default function AddJob() {
       setLoading(false);
     }
   };
-  // const backToForm = () => setSubmitted(false);
 
   return (
     <div className={addjobcss.root}>
@@ -1223,8 +1241,22 @@ export default function AddJob() {
           <div className={addjobcss.wizardLogo}>
             <Ico.Train />
           </div>
-          <h1>Add Job Notification</h1>
-          <p>Fill in all sections to publish the recruitment page</p>
+          <h1>{isEdit ? "Update Job Notification" : "Add Job Notification"}</h1>
+          <p>
+            {isEdit
+              ? "Edit the details and save your changes"
+              : "Fill in all sections to publish the recruitment page"}
+          </p>
+          {onCancel && (
+            <button
+              type="button"
+              className={addjobcss.btnPrev}
+              style={{ marginTop: 12 }}
+              onClick={onCancel}
+            >
+              ← Back to list
+            </button>
+          )}
         </div>
 
         {/* Step Bar */}
@@ -1283,7 +1315,11 @@ export default function AddJob() {
               disabled={loading}
               style={{ opacity: loading ? 0.6 : 1 }}
             >
-              {loading ? "Submitting..." : "Generate Job Page"}
+              {loading
+                ? "Submitting..."
+                : isEdit
+                  ? "Update Job"
+                  : "Generate Job Page"}
             </button>
           )}
         </div>
